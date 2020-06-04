@@ -1,4 +1,3 @@
-
 let L;
 let w = 0
 let L1;
@@ -14,7 +13,6 @@ createCanvas(400, 400, WEBGL);
 
 function draw() {
   background(220);
-  //orbitControl();
   rotateY(PI/(30))
   rotateX(PI/(6))
   normalMaterial();
