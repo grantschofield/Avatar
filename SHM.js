@@ -1,28 +1,60 @@
-let x = 0
-let a = 100
-let A = 100
+let u
 let t = 0
-let w = 3
-let R = 255
-let G = 40
-let B = 160
-let w2 = 3
+let v0 = -10
+const a = 9.8/100
+let v = 3
+let T = 0
+let P = 1
+let m = 0
+
+var ball = {
+x: 0,
+y: 0,
+diameter:50
+};
+var ball2 = {
+x: 0,
+y: 0,
+diameter:50
+};
 
 function setup() {
-  createCanvas(400, 400);
-background(220);
-for (let i = 0; i < 1000; i=i+0.1){
+createCanvas(600, 480);
 
-R -= 0.03
-G += 0.06
-B -= 0.08
-//x = A*tan((radians(w)*i))+200
-stroke(R,G,B)
-strokeWeight(6)
-point(i,x)
-y = a*sin((radians(w2)*i))+200
-point(i,y)
-print(y)
+x = 0
+y = 0
+
+}
+
+function mousePressed() {
+v = 10
+}
+function draw() {
+background(61,196,160);
+t = t + 1
+T = T + 1
+x = P*((v *T))+m 
+y = height+20+((v0*t)+(0.5*a)*(t*t))
+u = v0 +(a*t)
+
+ellipse(ball.x, ball.y, ball.diameter, ball.diameter); 
+if (y >= height+20){
+v0 = -(u*9/10)
+  t = 0
+
+}
+ellipse(x, y, 50, 50);
+if (x >=width){
+  P = P*-1
+  m = x
+  T = 0
+  
+  }
+  //v0 = -10
+if (x <=0){
+  P = P*-1
+  m = x
+  T = 0
 
 
 }
